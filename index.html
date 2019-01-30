@@ -19,7 +19,8 @@
 	</div>
 	<!-- Below is the div after sign-in-->
 	<div id="signinsuccess" class="hidden">
-		<h1>School <mono style="font-variant:small-caps;">vers<var style="font-style: normal;" onclick="openSesame()">i</var>on 2</mono><button id="logout">Log out</button></h1>
+		<h1>School <mono style="font-variant:small-caps;">vers<var style="font-style: normal;" onclick="openSesame()">i</var>on 2</mono><button id="logout" onclick="firebase.auth().signOut();
+	location.reload();">Log out</button></h1>
 		<p></p>
 		
 	</div>
@@ -34,7 +35,8 @@
 			<button class="tablinks" onclick="openPage(event, 'browse')">Browsers</button>
 			<button class="tablinks" onclick="openPage(event, 'chat')">Chat</button>
 			<button class="tablinks" id="togBut" onclick="toggle_night_mode();">Toggle Night Mode</button>
-			<button class="tablinks" id="logout">Log out</button>
+			<button class="tablinks" id="logout" onclick="firebase.auth().signOut();
+	location.reload();">Log out</button>
 		</div>
 
 		<div id="welcome" class="tabcontent" style="display: block;">
