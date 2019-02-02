@@ -2,10 +2,18 @@
   font-family: 'Ubuntu', sans-serif;
 }
 
+body {
+  margin: 2px;
+}
+
 body.night-mode {
   background: black;
   -webkit-filter: invert(1) hue-rotate(180deg);
   filter: invert(1) hue-rotate(180deg);
+}
+
+#blank {
+  display: block;
 }
 
 #togBut {
@@ -30,6 +38,20 @@ body.night-mode {
 
 h1 {
   text-align: center;
+}
+
+#logout1 {
+  float: right;
+  border: 1px solid #DCDCDC;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: medium;
+  cursor: pointer;
+}
+
+#logout1:hover {
+  background-color: red;
+  color: white;
 }
 
 #logout {
@@ -79,12 +101,12 @@ h1 {
 
 .tabcontent {
  display: none;
- padding: 5px 5px;
  border: 1px solid whitesmoke;
- border-top: none;
+ margin-top: 3px;
+ padding: 3px;
  animation: fadeEffect .3s;
- background: transparent;
- border-radius: 5px;
+ background: rgb(254,254,254);
+ border-radius: 10px;
  color: black;
 }
 
@@ -94,7 +116,7 @@ h1 {
  overflow: hidden;
  border: none;
  background-color: aliceblue;
- margin: 0px; 
+  margin-top: 2px;
  border-radius: 10px;
 }
 
@@ -119,13 +141,18 @@ h1 {
 
 .tabcontent1 {
  display: none;
- padding: 6px 12px;
+ padding: 3px 3px;
  border: 1px solid #DCDCDC;
  border-top: none;
  animation: fadeEffect .3s;
  border-radius: 5px;
  background-color: #fff;
  background: transparent;
+}
+
+iframe {
+  border-radius: 10px;
+  border: 1px solid #DCDCDC;
 }
 
 @keyframes fadeEffect {

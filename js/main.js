@@ -3,15 +3,17 @@ let sites = {
 	"paper": "https://www.paper-io.com/",
 	"hole": "https://hole-io.com/",
 	"worm": "https://wormate.io/",
-	"silver": "https://silvergames.com/",
 	"rider": "https://www.silvergames.com/en/rider-2/iframe",
 	"blank": "about:blank",
 	"bing": "https://bing.com/",
 };
-
-function mute() {
-	var tomute = document.querySelectorAll('.site').muted;
-	tomute.audio.muted = true;
+/*
+var pelements = document.querySelectorAll("a");
+pelements.target = "_blank";
+*/
+function logout() {
+	firebase.auth().signOut();
+	location.reload();
 }
 
 function openLinks() {

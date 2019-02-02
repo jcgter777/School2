@@ -33,8 +33,8 @@ document.getElementById('signin-div').addEventListener('click', () => {
 	var provider = new firebase.auth.GoogleAuthProvider();
 	firebase.auth().signInWithPopup(provider).then(function() {});
 });
-
+/*
 document.getElementById('logout').addEventListener('click', () => {
 	firebase.auth().signOut();
 	location.reload();
-});
+});*/

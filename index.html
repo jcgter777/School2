@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>School v. 2</title>
+	<title>School 2</title>
 	<link rel="shortcut icon" href="img/icon.png">
-	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<!--<link href="css/style.css" rel="stylesheet" type="text/css">-->
 	<link href="https://fonts.googleapis.com/css?family=Roboto|Ubuntu" rel="stylesheet">
 	<script src="https://apis.google.com/js/platform.js" async defer></script>
 	<script defer="true" src="https://www.gstatic.com/firebasejs/5.7.0/firebase-app.js"></script>
 	<script defer="true" src="https://www.gstatic.com/firebasejs/5.7.0/firebase-auth.js"></script>
 	<script defer="true" src="https://www.gstatic.com/firebasejs/5.7.0/firebase-database.js"></script>
 	<script defer="true" src="https://www.gstatic.com/firebasejs/5.7.1/firebase.js"></script>
+	<base target="_blank">
+	<style>#logout,#logout1,#togBut{float:right}.tab,.tab1{overflow:hidden}*{font-family:Ubuntu,sans-serif}body{margin:2px}body.night-mode{background:#000;-webkit-filter:invert(1) hue-rotate(180deg);filter:invert(1) hue-rotate(180deg)}#blank{display:block}.tabcontent,.tabcontent1{display:none;animation:fadeEffect .3s}#togBut{transition:all .2s ease 0s}#togBut:active,#togBut:hover{background:#000;color:#fff}#rider{width:60ex;height:80ex}#signin-div,h1{text-align:center}#logout1{border:1px solid #DCDCDC;border-radius:5px;padding:5px 10px;font-size:medium;cursor:pointer}#logout1:hover,#logout:hover{background-color:red;color:#fff}.tab button,.tab1 button{float:left;outline:0;transition:.3s;cursor:pointer}#signinbutton{width:220px;cursor:pointer}.tab{border:none;background-color:#f0f8ff;margin:0;border-radius:10px}.tab button{background-color:inherit;border:none;padding:10px 15px;font-size:medium}.tab button:hover{background-color:#87ceeb99}.tab button.active{background-color:#87ceeb}.tabcontent{border:1px solid #f5f5f5;margin-top:3px;padding:3px;background:#fefefe;border-radius:10px;color:#000}.tab1{border:none;background-color:#f0f8ff;margin-top:2px;border-radius:10px}.tab1 button{background-color:inherit;border:none;padding:5px 15px;font-size:small}.tab1 button:hover{background-color:#87ceeb99}.tab1 button.active{background-color:#87ceeb}.tabcontent1{padding:3px;border:1px solid #DCDCDC;border-top:none;border-radius:5px;background:0 0}iframe{border-radius:10px;border:1px solid #DCDCDC}@keyframes fadeEffect{from{opacity:0}to{opacity:1}}.topright{float:right;float:top;cursor:pointer;font-size:15px}input#iChat-input{width:60ex;margin:5px .5ex .5ex}div#iChat-messages{overflow:scroll;width:50vmax;height:30vmin;border:thin solid #000;padding:.4ex;cursor:pointer;margin-top:5px}div#iChat-messages p{text-align:left;font-weight:700}span.iChat-timestamp{font-family:monospace;font-weight:700;background-color:#eef;color:#66b}span.iChat-username{display:inline-block;font-weight:700;margin:0 0 0 .5ex}span.iChat-text{font-weight:400}.iChat-messages{margin:2px;text-align:left}.iChat-messages strong{font-weight:700}.iChat-highlight{font-weight:700;background-color:#000;color:#fff}.site{width:-webkit-fill-available;height:83vmin}.hidden{display:none}.visible{display:block}.footer{position:fixed;left:0;bottom:0;width:100%;background-color:#f0f8ff;color:#696969;text-align:center;font-size:10px}</style>
+	<link href="css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<div id="googlesignin" class="visible">
@@ -19,30 +22,31 @@
 	</div>
 	<!-- Below is the div after sign-in-->
 	<div id="signinsuccess" class="hidden">
-		<h1>School <mono style="font-variant:small-caps;">vers<var style="font-style: normal;" onclick="openSesame()">i</var>on 2</mono><button id="logout" onclick="firebase.auth().signOut();
-	location.reload();">Log out</button></h1>
+		<h1>School <mono style="font-variant:small-caps;">vers<var style="font-style: normal;" onclick="openSesame()">i</var>on 2</mono><button id="logout1" onclick="logout()">Log out</button></h1>
 		<p></p>
-		
 	</div>
 
 	<div id="truediv" class="hidden">
 		<div class="tab">
 			<button class="tablinks" onclick="openPage(event, 'welcome')">Welcome</button>
 			<button class="tablinks" onclick="openPage(event, 'about')">About</button>
-			<button class="tablinks" onclick="openPage(event, 'websites')">Fun!</button>
-			<button class="tablinks" onclick="openPage(event, 'youtube')">YouTube</button>
-			<button class="tablinks" onclick="openPage(event, 'count')">Count Down</button>
+			<button class="tablinks" onclick="openPage(event, 'websites')">Websites</button>
+			<!--<button class="tablinks" onclick="openPage(event, 'youtube')">YouTube</button>
+			<button class="tablinks" onclick="openPage(event, 'count')">Count Down</button>-->
 			<button class="tablinks" onclick="openPage(event, 'browse')">Browsers</button>
 			<button class="tablinks" onclick="openPage(event, 'chat')">Chat</button>
+			<button class="tablinks" onclick="openPage(event, 'rules')">Rules</button>
 			<button class="tablinks" id="togBut" onclick="toggle_night_mode();">Toggle Night Mode</button>
-			<button class="tablinks" id="logout" onclick="firebase.auth().signOut();
-	location.reload();">Log out</button>
+			<button class="tablinks" id="logout" onclick="logout()">Log out</button>
 		</div>
 
 		<div id="welcome" class="tabcontent" style="display: block;">
-			<span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
-			<h1>School version 2</h1>
-			<h3>Some rules*:</h3>
+			<h1>School <mono style="font-variant:small-caps;">version 2</mono></h1>
+			<p>By continuing to use this site, you agree to follow the <a target="_self" href="#" onclick="openPage(event, 'rules')">rules</a> of this site.</p>
+		</div>
+
+		<div id="rules" class="tabcontent">
+			<h1>School <mono style="font-variant:small-caps;">version 2</mono> rules*:</h1>
 			<ul>
 				<li>Unauthorized persons are not to know about this site, and definitely not it's key</li>
 				<li>Persons that have not been given explicit permission to use this site are not be told about it</li>
@@ -52,24 +56,27 @@
 		</div>
 
 		<div id="about" class="tabcontent">
-			<span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
 			<h1 style="text-align: left;">About <b><i>School</i></b></h1>
 			<h3>Credits</h3>
 			<h4>Without the help from several people and sites, I would not be able to have done this.</h4>
 			<ul>
 				<li>
-					<p><a href="https://www.cemetech.net/forum/profile.php?mode=viewprofile&u=14979">Battlesquid</a> on Cemetech for firebase sign in</p>
+					<p><a href="https://www.cemetech.net/forum/profile.php?mode=viewprofile&u=14979">Battlesquid</a> on Cemetech for firebase sign in and lots of other help with javascript.</p>
 				</li>
 				<li>
 					<p><a href="https://www.cemetech.net/forum/profile.php?mode=viewprofile&u=17249">_iPhoenix_</a> on Cemetech for firebase, and lots of help in past projects that enabled me to know 90% (100%?) of what I know now.</p>
 				</li>
 				<li>
-					<p><a>W3Schools</a> for tab code and a lot of other random html stuff</p>
+					<p><a href="https://www.w3schools.com/">W3Schools</a> for tab code and a lot of other random html stuff</p>
+				</li>
+				<li>
+					<p><a href="https://cssminifier.com/">CSS Minifier</a> for minifying CSS code</p>
 				</li>
 				<li>
 					<p>People from school that helped with odds and ends</p>
 				</li>
 			</ul>
+
 			<h3>Contributing</h3>
 			<p>If you would like to contribute to this project, fork this project's <a href="https://github.com/jcgter777/School/">github repository</a>, edit it, and make a pull request to jcgter777/master. </p>
 			<h3>Issues</h3>
@@ -90,42 +97,31 @@
 				<button class="tablinks1" onclick="openSite(event, 'paper')">Paper.io</button>
 				<button class="tablinks1" onclick="openSite(event, 'hole')">Hole.io</button>
 				<button class="tablinks1" onclick="openSite(event, 'worm')">Wormate.io</button>
-				<button class="tablinks1" onclick="openSite(event, 'silver')">Silvergames.com</button>
 				<button class="tablinks1" onclick="openSite(event, 'rider')">Rider 2</button>
 			</div>
 
 			<div class="tabcontent1">
-				<span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
 				<iframe id="creatur" src="" class="site"></iframe>
 			</div>
 
 			<div class="tabcontent1">
-				<span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
 				<iframe id="paper" src="" class="site" scrolling="no"></iframe>
 			</div>
 
 			<div class="tabcontent1">
-				<span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
 				<iframe id="hole" src="" class="site" scrolling="no"></iframe>
 			</div>
 
 			<div class="tabcontent1">
-				<span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
 				<iframe id="worm" src="" class="site" scrolling="no"></iframe>
-			</div>
-
-			<div class="tabcontent1">
-				<span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
-				<iframe id="silver" src="" class="site"></iframe>
 			</div>
 			
 			<div class="tabcontent1">
-				<span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
 				<iframe id="rider" src="" class="site"></iframe>
 			</div>
 
-			<div id="blank" class="tabcontent1" style="display: block">
-				<span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+			<div id="blank" class="tabcontent1">
+				<!--<span onclick="this.parentElement.style.display='none'" class="topright">&times</span>-->
 				<iframe id="blank" src="" class="site"></iframe>
 			</div>
 		</div>
@@ -154,7 +150,7 @@
 
 		<div id="chat" class="tabcontent">
 			<span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
-			<p>Chat with other <b><i>School</i></b> users!</p>
+			<p>Chat with other <b><i>School2</i></b> users!</p>
 			<label for="iChat-input">iChat</label>
 			<input id="iChat-input" class="iChat iChat-input" placeholder="Chat here!"><div id="iChat-messages" class="iChat-messages iChat"></div><script src="https://legend-of-iphoenix.github.io/iChat/js/iChat.min.js"></script>
 
