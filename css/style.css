@@ -12,6 +12,7 @@ body.night-mode {
   filter: invert(1) hue-rotate(180deg);
 }
 
+
 #blank {
   display: block;
 }
@@ -102,14 +103,17 @@ h1 {
 .tabcontent {
  display: none;
  border: 1px solid whitesmoke;
- margin-top: 3px;
- padding: 3px;
+ margin-top: 0px;
+ padding: 0px;
  animation: fadeEffect .3s;
  background: rgb(254,254,254);
  border-radius: 10px;
  color: black;
 }
 
+.tabcontent text {
+  right: 20px;
+}
 /* Below is the second set of tabs */
 
 .tab1 {
@@ -141,11 +145,11 @@ h1 {
 
 .tabcontent1 {
  display: none;
- padding: 3px 3px;
+ padding: 0px 0px;
  border: 1px solid #DCDCDC;
  border-top: none;
  animation: fadeEffect .3s;
- border-radius: 5px;
+ border-radius: 10px;
  background-color: #fff;
  background: transparent;
 }
