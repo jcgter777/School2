@@ -10,6 +10,7 @@
 	<script defer="true" src="https://www.gstatic.com/firebasejs/5.7.0/firebase-auth.js"></script>
 	<script defer="true" src="https://www.gstatic.com/firebasejs/5.7.0/firebase-database.js"></script>
 	<script defer="true" src="https://www.gstatic.com/firebasejs/5.7.1/firebase.js"></script>
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 	<base target="_blank">
 	<style>#logout,#logout1,#togBut{float:right}.tab,.tab1{overflow:hidden}*{font-family:Ubuntu,sans-serif}body{margin:2px}body.night-mode{background:#000;-webkit-filter:invert(1) hue-rotate(180deg);filter:invert(1) hue-rotate(180deg)}#blank{display:block}.tabcontent,.tabcontent1{display:none;animation:fadeEffect .3s}#togBut{transition:all .2s ease 0s}#togBut:active,#togBut:hover{background:#000;color:#fff}#rider{width:60ex;height:80ex}#signin-div,h1{text-align:center}#logout1{border:1px solid #DCDCDC;border-radius:5px;padding:5px 10px;font-size:medium;cursor:pointer}#logout1:hover,#logout:hover{background-color:red;color:#fff}.tab button,.tab1 button{float:left;outline:0;transition:.3s;cursor:pointer}#signinbutton{width:220px;cursor:pointer}.tab{border:none;background-color:#f0f8ff;margin:0;border-radius:10px}.tab button{background-color:inherit;border:none;padding:10px 15px;font-size:medium}.tab button:hover{background-color:#87ceeb99}.tab button.active{background-color:#87ceeb}.tabcontent{border:1px solid #f5f5f5;margin-top:3px;padding:3px;background:#fefefe;border-radius:10px;color:#000}.tab1{border:none;background-color:#f0f8ff;margin-top:2px;border-radius:10px}.tab1 button{background-color:inherit;border:none;padding:5px 15px;font-size:small}.tab1 button:hover{background-color:#87ceeb99}.tab1 button.active{background-color:#87ceeb}.tabcontent1{padding:3px;border:1px solid #DCDCDC;border-top:none;border-radius:5px;background:0 0}iframe{border-radius:10px;border:1px solid #DCDCDC}@keyframes fadeEffect{from{opacity:0}to{opacity:1}}.topright{float:right;float:top;cursor:pointer;font-size:15px}input#iChat-input{width:60ex;margin:5px .5ex .5ex}div#iChat-messages{overflow:scroll;width:50vmax;height:30vmin;border:thin solid #000;padding:.4ex;cursor:pointer;margin-top:5px}div#iChat-messages p{text-align:left;font-weight:700}span.iChat-timestamp{font-family:monospace;font-weight:700;background-color:#eef;color:#66b}span.iChat-username{display:inline-block;font-weight:700;margin:0 0 0 .5ex}span.iChat-text{font-weight:400}.iChat-messages{margin:2px;text-align:left}.iChat-messages strong{font-weight:700}.iChat-highlight{font-weight:700;background-color:#000;color:#fff}.site{width:-webkit-fill-available;height:83vmin}.hidden{display:none}.visible{display:block}.footer{position:fixed;left:0;bottom:0;width:100%;background-color:#f0f8ff;color:#696969;text-align:center;font-size:10px}</style>
 	<link href="css/style.css" rel="stylesheet" type="text/css">
@@ -19,6 +20,11 @@
 		<h1>School version 2</h1>
 		<h4 style="text-align:center;">Google sign in is required to access this site</h4>
 		<div id="signin-div"><img id="signinbutton" src="img/googlesignin.png" onclick=""></div>
+		<form action="?" method="POST">
+      		<div class="g-recaptcha" data-sitekey="6LcVc48UAAAAAAotVBJax4seGOarZ-N_7nMLQpKb"></div>
+      		<br/>
+      		<input type="submit" value="Submit">
+    	</form>
 	</div>
 	<!-- Below is the div after sign-in-->
 	<div id="signinsuccess" class="hidden">
