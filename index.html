@@ -16,18 +16,15 @@
 	<link href="css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<div id="googlesignin" class="visible">
+	<div id="googlesignin" class="hidden">
 		<h1>School version 2</h1>
 		<h4 style="text-align:center;">Google sign in is required to access this site</h4>
 		<div id="signin-div"><img id="signinbutton" src="img/googlesignin.png" onclick=""></div>
 	</div>
 	<!-- Below is the div after sign-in-->
-	<div id="signinsuccess" class="hidden">
+	<div id="signinsuccess" class="visible">
 		<h1>School <mono style="font-variant:small-caps;">vers<var style="font-style: normal;" onclick="openSesame()">i</var>on 2</mono><button id="logout1" onclick="logout()">Log out</button></h1>
-		<br/>
-		<form action="?" method="POST">
       		<div class="g-recaptcha" data-sitekey="6LcVc48UAAAAAAotVBJax4seGOarZ-N_7nMLQpKb"></div>
-    	</form>
 	</div>
 
 	<div id="truediv" class="hidden">

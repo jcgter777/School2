@@ -12,6 +12,10 @@ body.night-mode {
   filter: invert(1) hue-rotate(180deg);
 }
 
+.g-recaptcha div {
+  margin-left: auto; 
+  margin-right: auto;
+}
 
 #blank {
   display: block;
