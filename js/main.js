@@ -4,6 +4,7 @@ let sites = {
 	"hole": "https://hole-io.com/",
 	"worm": "https://wormate.io/",
 	"rider": "https://www.silvergames.com/en/rider-2/iframe",
+	"vex4": "https://www.silvergames.com/en/vex-4/iframe",
 	"blank": "about:blank",
 	"bing": "https://bing.com/",
 };
