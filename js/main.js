@@ -3,9 +3,10 @@ let sites = {
 	"paper": "https://www.paper-io.com/",
 	"hole": "https://hole-io.com/",
 	"worm": "https://wormate.io/",
-	"rider": "https://www.silvergames.com/en/rider-2/iframe",
-	"vex4": "https://www.silvergames.com/en/vex-4/iframe",
-	"police": "https://www.silvergames.com/en/police-pursuit-2/iframe",
+	"rider": "https://html5.gamedistribution.com/27c8fcce880a46d3a864a915fe2a0fb1/",
+	"vex4": "https://html5.gamedistribution.com/80e6a5ae477f4d4fbcd1ea293d10087d/",
+	"police": "https://kdata1.com/2019/01/police-pursuit-2/",
+	"snowball": "https://www.silvergames.com/en/snowball-io/iframe",
 	"blank": "about:blank",
 	"bing": "https://bing.com/",
 };
